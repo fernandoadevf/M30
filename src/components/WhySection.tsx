@@ -18,7 +18,7 @@ const WhySection: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-black">
+    <section className="section-padding bg-black relative z-10">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -545,31 +545,12 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
           perspective: 900px;
         }
 
-        /* Mobile optimizations - reduzir espaços vazios */
+        /* Mobile optimizations */
         @media (max-width: 768px) {
           .hsv-container {
             height: 70vh;
             padding: clamp(4px, 1vw, 8px);
             margin-top: -2rem;
-          }
-          
-          .hsv-headline {
-            margin-top: -3rem;
-          }
-          
-          .hsv-title {
-            font-size: clamp(24px, 6vw, 48px) !important;
-            margin-bottom: 0.2rem !important;
-          }
-          
-          .hsv-subtitle {
-            font-size: clamp(14px, 3vw, 18px) !important;
-            margin-bottom: 0.4rem !important;
-          }
-          
-          .hsv-meta {
-            margin-top: 0.3rem !important;
-            font-size: 0.8rem !important;
           }
         }
 
