@@ -68,7 +68,7 @@ const UrgencyTimer: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="bg-red-600 px-2 py-1 rounded text-white"
           >
-            {timeLeft.hours.toString().padStart(2, '0')}
+            {timeLeft.hours.toString()}
           </motion.span>
           <span className="text-red-400">:</span>
           <motion.span
