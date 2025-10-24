@@ -4,38 +4,36 @@ import { motion } from 'framer-motion';
 const UrgencyTimer: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 23,
-    minutes: 59,
-    seconds: 59
+    minutes: 30,
+    seconds: 0
   });
 
   useEffect(() => {
-    const getTimeUntilMidnight = () => {
-      const now = new Date();
-      const midnight = new Date();
-      midnight.setHours(23, 59, 59, 999); // 23:59:59 do dia atual
-      
-      // Se já passou das 23:59:59, vai para o próximo dia
-      if (now >= midnight) {
-        midnight.setDate(midnight.getDate() + 1);
-        midnight.setHours(23, 59, 59, 999);
-      }
-      
-      return midnight.getTime() - now.getTime();
-    };
-
     const updateTimer = () => {
-      const timeUntilMidnight = getTimeUntilMidnight();
-      
-      const hours = Math.floor(timeUntilMidnight / (1000 * 60 * 60));
-      const minutes = Math.floor((timeUntilMidnight % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeUntilMidnight % (1000 * 60)) / 1000);
-      
-      setTimeLeft({ hours, minutes, seconds });
+      setTimeLeft(prevTime => {
+        let { hours, minutes, seconds } = prevTime;
+        
+        // Decrementa os segundos
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else {
+          // Quando chegar a 0, reseta para 23:30:00
+          hours = 23;
+          minutes = 30;
+          seconds = 0;
+        }
+        
+        return { hours, minutes, seconds };
+      });
     };
 
-    // Atualiza imediatamente
-    updateTimer();
-    
     // Atualiza a cada segundo
     const interval = setInterval(updateTimer, 1000);
     
