@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import UrgencyTimer from './UrgencyTimer';
 
 const smoothScrollTo = (elementId: string) => {
   const element = document.getElementById(elementId);
@@ -34,13 +35,21 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-black/20 backdrop-blur-md border-b border-white/10' 
-          : 'bg-transparent'
-      }`}
-    >
+    <>
+      {/* Cronômetro de Urgência */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-red-900/95 backdrop-blur-sm border-b border-red-500/30">
+        <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-2">
+          <UrgencyTimer />
+        </div>
+      </div>
+      
+      <nav 
+        className={`fixed top-16 xs:top-16 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-black/20 backdrop-blur-md border-b border-white/10' 
+            : 'bg-transparent'
+        }`}
+      >
       <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 xs:h-16">
           {/* Logo */}
@@ -172,6 +181,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

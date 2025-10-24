@@ -94,7 +94,7 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black py-8 xs:py-12 sm:py-16">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black pt-20 xs:pt-24 sm:pt-28 pb-8 xs:pb-12 sm:pb-16">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-gold/[0.08] via-transparent to-gradient-to/[0.08] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
