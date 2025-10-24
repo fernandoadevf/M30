@@ -199,7 +199,7 @@ const CTAParallax = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.7 }}
         >
-          <span className="text-primary-gold">R$59,90 agora</span>
+          <span className="text-primary-gold">R$23,90 agora</span>
           <br />
           <span className="text-primary-light">ou continuar perdendo tempo e oportunidades?</span>
         </motion.h2>

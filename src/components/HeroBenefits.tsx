@@ -55,7 +55,7 @@ const HeroBenefits: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-4">
                 <span className="text-2xl text-gray-400 line-through">De R$197</span>
-                <span className="text-4xl sm:text-5xl font-bold text-gradient">por apenas R$59,90</span>
+                <span className="text-4xl sm:text-5xl font-bold text-gradient">por apenas R$23,90</span>
               </div>
               <p className="text-gray-300 text-sm">
                 💰 Pagamento único • Sem mensalidades • Oferta por tempo limitado
